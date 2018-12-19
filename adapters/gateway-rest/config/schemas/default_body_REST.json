@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "parserData": {
+    "format": "JSON",
+    "resource": "REST_body",
+    "messageType": "default",
+    "messageTypeFinder": {
+      "format": "JSON_POINTER",
+      "jsonPointer": "/messageType"
+    }
+  },
+  "properties": {
+    "deviceAlternateId": {
+      "type": "string",
+      "mapTo": "device_alternate_id"
+    },
+    "measures": {
+      "type": "object",
+      "mapTo": "value",
+      "properties": {
+        "*": {
+          "mapKeyTo": "property_name",
+          "mapTo": "value"
+        }
+      }
+    },
+    "capabilityAlternateId": {
+      "type": "string",
+      "mapTo": "capability_alternate_id"
+    },
+    "sensorAlternateId": {
+      "type": "string",
+      "mapTo": "sensor_alternate_id"
+    },
+    "timestamp": {
+      "type": "string",
+      "mapTo": "start_time",
+      "format": "ISO8601orJavaTimestamp"
+    },
+    "sensorTypeAlternateId": {
+      "type": "number",
+      "mapTo": "sensor_type_alternate_id"
+    },
+    "sensorId": {
+      "type": "string",
+      "mapTo": "sensor_id"
+    }
+  }
+}

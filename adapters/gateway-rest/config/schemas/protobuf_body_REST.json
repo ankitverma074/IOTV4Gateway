@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "parserData": {
+    "format": "PROTOBUF",
+    "resource": "REST_body",
+    "messageType": "PROTOBUF",
+    "messageTypeFinder": {
+      "format": "PROTOBUF"
+    },
+    "protoSchema": "syntax = \"proto3\";\nmessage Body {\n  required string deviceAlternateId = 1;\n  message Measures {\n    required string name = 1;\n    required string value = 2;\n  }\n  repeated Measures measures = 2;\n  required string capabilityAlternateId = 3;\n  required string sensorAlternateId = 4;\n  optional int64 timestamp = 5;\n  required string sensorTypeAlternateId = 6;\n}"
+  },
+  "properties": {
+    "deviceAlternateId": {
+      "type": "string",
+      "mapTo": "device_alternate_id"
+    },
+    "measures": {
+      "type": "object",
+      "mapTo": "bin_value",
+      "properties": {
+        "*": {
+          "mapKeyTo": "property_name",
+          "mapTo": "bin_value"
+        }
+      }
+    },
+    "capabilityAlternateId": {
+      "type": "string",
+      "mapTo": "capability_alternate_id"
+    },
+    "sensorAlternateId": {
+      "type": "string",
+      "mapTo": "sensor_alternate_id"
+    },
+    "timestamp": {
+      "type": "string",
+      "mapTo": "start_time",
+      "format": "ISO8601orJavaTimestamp"
+    },
+    "sensorTypeAlternateId": {
+      "type": "number",
+      "mapTo": "sensor_type_alternate_id"
+    },
+    "sensorId": {
+      "type": "string",
+      "mapTo": "sensor_id"
+    }
+  }
+}

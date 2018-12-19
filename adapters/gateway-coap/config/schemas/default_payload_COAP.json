@@ -1,0 +1,54 @@
+{
+	"type": "object",
+	"parserData": {
+		"format": "JSON",
+		"resource": "COAP_resource",
+		"messageType": "default",
+		"messageTypeFinder": {
+			"format": "JSON_POINTER",
+			"jsonPointer": "/messageType"
+		}
+	},
+	"actions": [{
+		"type": "ADD",
+		"mapTo": "sensor_type_alternate_id",
+		"value": 0
+	}],
+	"properties": {
+		"deviceAlternateId": {
+			"type": "string",
+			"mapTo": "device_alternate_id"
+		},
+		"measures": {
+			"type": "object",
+			"mapTo": "value",
+			"properties": {
+				"*": {
+					"mapKeyTo": "property_name",
+					"mapTo": "value"
+				}
+			}
+		},
+		"capabilityAlternateId": {
+			"type": "string",
+			"mapTo": "capability_alternate_id"
+		},
+		"sensorAlternateId": {
+			"type": "string",
+			"mapTo": "sensor_alternate_id"
+		},
+		"timestamp": {
+			"type": "number",
+			"mapTo": "start_time",
+			"format": "JavaTimestamp"
+		},
+		"sensorTypeAlternateId": {
+			"type": "number",
+			"mapTo": "sensor_type_alternate_id"
+		},
+		"sensorId": {
+			"type": "string",
+			"mapTo": "sensor_id"
+		}
+	}
+}

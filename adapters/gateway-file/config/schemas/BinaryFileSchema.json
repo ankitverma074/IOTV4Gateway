@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "parserData": {
+    "resource": "FILE_content",
+    "format": "BINARY",
+    "messageType": "binary_file"
+  },
+  "properties": {
+    "config/gateway-file-input/BinaryFile.zip": {
+      "mapTo": "value",
+      "actions": [
+        {
+          "type": "ADD",
+          "mapTo": "capability_alternate_id",
+          "value": "binary_file"
+        },
+        {
+          "type": "ADD",
+          "mapTo": "sensor_type_alternate_id",
+          "value": 9
+        },
+        {
+          "type": "ADD",
+          "mapTo": "sensor_alternate_id",
+          "value": "binaryFileSensor"
+        }
+      ]
+    }
+  }
+}
