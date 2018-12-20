@@ -1,0 +1,15 @@
+{
+	"type": "object",
+	"parserData": {
+		"format": "SPLIT_STRING",
+		"resource": "REST_url",
+		"messageType": "PROTOBUF"
+	},
+	"separator": "/",
+	"properties": {
+		"0": {
+			"type": "string",
+			"mapTo": "device_alternate_id"
+		}
+	}
+}
